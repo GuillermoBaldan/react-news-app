@@ -3,9 +3,11 @@ import NewsItem from './NewsItem';
 
 const NewsList = ({ news }) => {
   return (
-    <div>
+    <div className="row">
       {news.map((article, index) => (
-        <NewsItem key={index} article={article} />
+        <div className="col s12 m6" key={index}>
+          <NewsItem article={article} />
+        </div>
       ))}
     </div>
   );

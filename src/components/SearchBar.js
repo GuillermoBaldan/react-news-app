@@ -10,13 +10,23 @@ const SearchBar = ({ setSearchTerm }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Search for news..."
-      />
-      <button type="submit">Search</button>
+      <div className="row">
+        <div className="input-field col s12 m8 offset-m2">
+          <input
+            id="search"
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Search for news..."
+          />
+          <label htmlFor="search">Search News</label>
+        </div>
+        <div className="col s12 m2 center-align">
+          <button className="btn waves-effect waves-light" type="submit">
+            Search
+          </button>
+        </div>
+      </div>
     </form>
   );
 };

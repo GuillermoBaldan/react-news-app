@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import NewsList from './components/NewsList';
 import SearchBar from './components/SearchBar';
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/js/materialize.min.js';
 
 const App = () => {
   const [news, setNews] = useState([]);
   const [searchTerm, setSearchTerm] = useState('technology');
-  const YOUR_API_KEY = "8caaf14d49cc43faad98bd642fe239ac"
+  const YOUR_API_KEY = "8caaf14d49cc43faad98bd642fe239ac";
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -18,8 +20,8 @@ const App = () => {
   }, [searchTerm]);
 
   return (
-    <div className="App">
-      <h1>News App</h1>
+    <div className="container">
+      <h1 className="center-align">News App</h1>
       <SearchBar setSearchTerm={setSearchTerm} />
       <NewsList news={news} />
     </div>
