@@ -21,17 +21,19 @@ const NewsList = ({ news }) => {
 
     // Ejecutar el truncamiento al cargar el componente
     truncateTextToLines('.news-item .card-content p', 3);
+    truncateTextToLines('.news-item .card-content h5', 3);  // Limitar el título a 3 líneas también
 
     // Reaplicar la función si el tamaño de la ventana cambia
-    window.addEventListener('resize', () => {
+    const handleResize = () => {
       truncateTextToLines('.news-item .card-content p', 3);
-    });
+      truncateTextToLines('.news-item .card-content h5', 3);  // Reaplicar el truncamiento al título
+    };
+
+    window.addEventListener('resize', handleResize);
 
     // Cleanup event listener on component unmount
     return () => {
-      window.removeEventListener('resize', () => {
-        truncateTextToLines('.news-item .card-content p', 3);
-      });
+      window.removeEventListener('resize', handleResize);
     };
   }, []); // Empty dependency array to ensure it runs only on mount
 
