@@ -2,9 +2,9 @@ import React from 'react';
 
 const NewsItem = ({ article }) => {
   return (
-    <div className="card">
+    <div className="card news-item">
       <div className="card-image">
-        <img src={article.urlToImage} alt={article.title} />
+        <img src={article.urlToImage} alt={article.title} style={{ height: '150px', objectFit: 'cover' }} />
         <span className="card-title">{article.source.name}</span>
       </div>
       <div className="card-content">

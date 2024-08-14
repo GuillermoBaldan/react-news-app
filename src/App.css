@@ -1,40 +1,45 @@
-.App {
-  text-align: center;
-  padding: 20px;
-}
-
 .news-item {
-  margin: 20px 0;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  height: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
-.news-item h2 {
-  margin: 0 0 10px;
+.news-item .card-image img {
+  width: 100%;
+  height: 12vw; /* Ajusta esta altura */
+  object-fit: cover;
 }
 
-.news-item a {
-  color: #007bff;
-  text-decoration: none;
+.news-item .card-content {
+  flex-grow: 1;
+  overflow: hidden;
 }
 
-.news-item a:hover {
-  text-decoration: underline;
+.news-item .card-content h5 {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-form {
-  margin-bottom: 20px;
+.news-item .card-content p {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limita el texto a 3 líneas */
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  box-orient: vertical;
+  max-height: calc(1.5em * 3); /* Ajusta este valor si cambias el line-height */
+  line-height: 1.5em; /* Asegura que todas las líneas tengan una altura consistente */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
-input {
-  padding: 10px;
-  font-size: 16px;
-  width: 300px;
-  margin-right: 10px;
-}
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
+.news-item .card-action {
+  text-align: right;
 }
